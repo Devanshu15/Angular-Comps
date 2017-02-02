@@ -1,0 +1,29 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="Components/mySearch/mySearch.css">
+</head>
+<body>
+<div class="search-box">
+	<h4> Search By:</h4> 
+	<input type="text" name="userName" placeholder="User Name" ng-model="filterData.searchname" ng-init="filterData.searchname=''">
+	<label class="formgroup"> Gender </label> 
+		<input class="form-check-input" type="radio" name="gender" value="Male" ng-model="filterData.searchgender">Male
+		<input class="form-check-input" type="radio" name="gender" value="Female" ng-model="filterData.searchgender">Female
+		<input class="form-check-input" type="radio" name="gender" value="Others" ng-model="filterData.searchgender">Others
+	
+	<h4>Sort By: </h4>
+	<select name="sortBy" id="sortOption" ng-model="filterData.sortsortOrder">
+			<option value="name" selected>Name</option>
+			<option value="gender">Gender </option>
+			<option value="emailId">Email </option>
+			<option value="city">City </option>
+			
+	</select> 
+	<span class="formgroup">
+	<input ng-model="filterData.sortdirection" type="radio" name="direction" checked>Ascending 
+	<input ng-model="filterData.sortdirection" type="radio" name="direction" value="descending" >Descending
+	</span>
+	
+	<button class="filter" ng-click="setFilter()" >Filter & Sort</button> 
+		
+</div>
+</body>

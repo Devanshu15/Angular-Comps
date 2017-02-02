@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularPractice">
+<head>
+	<title> Angular Form </title>
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/appRouter.js"></script>
+	<script type="text/javascript" src="js/commonServices.js"></script>
+	<script type="text/javascript" src="Components/myForm/formComp.js"></script>
+	<script type="text/javascript" src="Components/mySearch/searchComp.js"></script>
+	<script type="text/javascript" src="Components/myTable/listComp.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">	
+</head>
+<body ng-view>
+	<div class="container-fluid">
+		<my-search class="col-sm-9"></my-search>
+		<div class="col-sm-3">
+		<div class="add-user"> 
+			<a class="btn add-user" href="#/add"> Click To Add User </a>
+		</div>
+		</div>
+	</div>
+	<my-table></my-table>
+</body>
+</html>

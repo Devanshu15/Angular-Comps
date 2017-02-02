@@ -1,0 +1,28 @@
+
+<div class="container-fluid">
+ <h3> Search For Users Below</h3>
+	<div class="table-responsive">          
+	  <table class="table table-bordered">
+		    <thead>
+		      <tr>
+		        <th>#</th>
+		        <th>Name</th>
+		        <th>Gender</th>
+		        <th>Email</th>
+		        <th>City</th>
+		        <th>Date of Birth</th>
+		      </tr>
+		    </thead> 
+		    <tbody>
+		    	<tr ng-repeat="user in allUsers1 | filter:filtersData.search | orderBy: filtersData.sort.sortOrder : filtersData.sort.direction">
+			        <td>{{ $index + 1 }} </td>
+			        <td>{{user.name}}</td>
+			        <td>{{user.gender}}</td>
+			        <td>{{user.emailId}}</td>
+			        <td>{{user.city}}</td>
+			        <td>{{user.dob}}</td>
+		      	</tr>
+		    </tbody>
+		</table>
+	</div>
+</div>

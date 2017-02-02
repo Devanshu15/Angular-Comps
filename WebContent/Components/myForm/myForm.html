@@ -1,0 +1,84 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="Components/myForm/myForm.css">
+</head>
+<body >
+
+<header></header>
+<div class="container user-form">
+<h2> Fill Following Form</h2>
+<form class="form-horizontal" name="form1">
+	<div class="form-group row">
+		<label for="name" class="col-sm-2 col-form-label">Full Name </label>
+		<div class="col-sm-10">
+		 <input type="text" name="name" id="name" class="form-control" ng-model="user.name" required>
+		 <span class="form-validation-text" ng-show="form1.name.$touched && form1.name.$invalid"> Name is required </span>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label class="col-form-label col-sm-2" for="gender">Gender</label> 
+		<div class="col-sm-10">
+	        <div class="form-check">
+	          <label class="form-check-label">
+	          <input class="form-check-input" type="radio" name="gender" ng-model="user.gender" value="Male" required>Male
+	          </label>
+	         </div>
+	         <div class="form-check">
+	          <label class="form-check-label">
+	          <input class="form-check-input" type="radio" name="gender" ng-model="user.gender" value="Female" required>Female
+	          </label>
+	         </div>
+	         <div class="form-check">
+	          <label class="form-check-label">
+	          <input class="form-check-input" type="radio" name="gender" ng-model="user.gender" value="Others" required>Others
+	          </label>
+	         </div>
+	         <span class="form-validation-text" ng-show="form1.gender.$touched && form1.gender.$error.required"> This is mandatory </span>
+         </div>
+	</div>
+	<div class="form-group row">
+		<label for="emailId" class="col-sm-2 col-form-label">Email Address </label>
+		<div class="col-sm-10">
+		<input type="email" name="email" id="emailId" class="form-control" ng-model="user.emailId" ng-pattern="emailFormat" required >
+		<span class="form-validation-text" ng-show="form1.email.$touched && form1.email.$error.required">Email is required.</span>
+		<span class="form-validation-text" ng-show="form1.email.$dirty && form1.email.$error.pattern">Invalid email address.</span>
+		</div> 
+	</div>
+	<div class="form-group row">
+		<label for="city" class="col-sm-2 col-form-label">Select Your City </label>
+		<div class="col-sm-10">
+		<select name="city" id="city" class="form-control" ng-model="user.city" required>
+			<option value="" selected>Select City </option>
+			<option value="Delhi">Delhi </option>
+			<option value="Banglore">Banglore </option>
+			<option value="Calcutta">Calcutta </option>
+			<option value="Chennai">Chennai</option>
+		</select>
+		<span class="form-validation-text" ng-show="form1.city.$touched && form1.city.$error.required"> This is required </span>
+		</div> 
+	</div>
+	
+	<div class="form-group row">
+      <label class="col-sm-2">Terms and Conditions</label>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" name="tnc" type="checkbox" ng-model="user.tnc" required> Agree
+          </label>
+        </div>
+        <span class="form-validation-text" ng-show="form1.tnc.$touched && form1.tnc.$error.required"> Please check to agree </span>
+      </div>
+    </div>
+    <div class="form-group row">
+		<label for="addBtn" class="col-sm-2 col-form-label">Click To Add Details </label>
+		<div class="col-sm-10">
+		<input type="submit" name="save" id="addBtn" class="btn btn-primary" ng-click="saveUser(user)" >
+	</div> 
+	</div>
+</form>
+
+
+ 
+</div>
+<a href="#/home" class="btn">Back to home </a>
+
+</body>

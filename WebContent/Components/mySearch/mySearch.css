@@ -1,0 +1,18 @@
+.search-box {
+	margin: 10px;
+	padding: 10px;
+	background-color:lightgrey;
+	border: 1px solid black ;
+}
+
+.formgroup {
+	margin-left: 10px;
+
+}
+
+.filter {
+	height: 35px;
+    display: block;
+    margin-top: 10px;
+    
+} 
